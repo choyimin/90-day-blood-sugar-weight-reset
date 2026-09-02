@@ -1,0 +1,402 @@
+<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>90 天控糖與體重健康重整</title><style>
+:root{--g:#1f3d33;--g2:#315747;--sage:#6b7f71;--cream:#faf8f5;--sand:#e7dfd1;--mist:#e9eee9;--ink:#1e1e1e;--muted:#6f756f;--line:#e4e0d8;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.7 Inter,"Noto Sans TC",system-ui,sans-serif}button,a{font:inherit}a{text-decoration:none;color:inherit}.top{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:#fffdf9;position:sticky;top:0;z-index:5}.brand{font-family:Georgia,"Noto Serif TC",serif;font-size:24px;color:var(--g)}.nav{display:flex;gap:24px;color:var(--muted);font-size:14px}.btn{border:0;border-radius:999px;padding:12px 20px;background:var(--g);color:#fff;cursor:pointer;font-weight:700}.ghost{background:transparent;color:var(--g);border:1px solid var(--g)}.wrap{max-width:1120px;margin:auto;padding:50px 24px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:65px 0}.eyebrow{display:inline-block;border:1px solid #c9c1b4;border-radius:999px;padding:8px 16px;letter-spacing:3px;color:#557064;background:#f0ebe1;font-size:12px}.hero h1{font:clamp(44px,6vw,76px)/1.02 Georgia,"Noto Serif TC",serif;color:var(--g);margin:25px 0}.hero p{font-size:18px;color:#52605a;max-width:650px}.price{font:24px Georgia;margin:28px 0}.photo{min-height:440px;border-radius:22px;background:linear-gradient(135deg,#d9d0c1,#f4eee5 48%,#b8c5b8);display:grid;place-items:center;overflow:hidden}.plate{width:72%;height:72%;border-radius:50%;background:#f8f5ef;box-shadow:0 18px 50px #0001;position:relative}.plate:before{content:"🥗";font-size:120px;position:absolute;inset:0;display:grid;place-items:center}.section{padding:65px 0}.section h2{font:42px Georgia,"Noto Serif TC",serif;color:var(--g);margin:0 0 18px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.weekcard{min-height:190px}.weekcard b{color:var(--g);font-size:18px}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{padding:18px 10px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:15px}.app{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 70px)}.side{border-right:1px solid var(--line);padding:25px 16px;background:#f3efe8}.side a{display:block;padding:12px 14px;border-radius:12px;color:#52605a}.side a:hover{background:#fff}.main{max-width:980px;width:100%;margin:auto;padding:40px 28px}.kicker{color:var(--sage);letter-spacing:2px;font-size:12px}.h1{font:48px Georgia,"Noto Serif TC",serif;color:var(--g);margin:8px 0 18px}.bar{height:10px;background:#e4e0d8;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);width:0}.lesson{display:grid;grid-template-columns:1fr 1fr;gap:18px}.check{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}input[type=checkbox]{width:20px;height:20px;accent-color:var(--g)}.footer{padding:40px 0;color:var(--muted);font-size:12px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}@media(max-width:800px){.hero{grid-template-columns:1fr}.photo{min-height:300px}.grid,.lesson{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}.app{grid-template-columns:1fr}.side{display:none}.nav{display:none}.hero h1{font-size:48px}}@media(max-width:520px){.grid,.lesson{grid-template-columns:1fr}.wrap{padding:30px 18px}.top{padding:0 18px}.steps{grid-template-columns:1fr 1fr}}
+</style>
+<body>
+<header class="top">
+  <a class="brand" href="/">90 天健康重整</a>
+  <nav class="nav">
+    <a href="/dashboard">今天</a>
+    <a href="/weeks/1">12 週計畫</a>
+    <a href="/progress">進度</a>
+    <a href="/bonus">工具與 Bonus</a>
+  </nav>
+  <a class="btn" href="/dashboard">開始我的重整 →</a>
+</header>
+
+<div id="site"></div>
+
+<script>
+const weeks=[
+["重新開始與基準線","建立你的起點，從觀察而不是完美開始。"],
+["認識 GI 與碳水化合物","理解食物如何影響餐後反應，學會更聰明地選擇。"],
+["打造均衡餐盤","用簡單的餐盤結構，讓每一餐更容易平衡。"],
+["看懂食品標籤","不用成為營養專家，也能快速讀懂包裝食品。"],
+["早餐策略","建立適合忙碌早晨、外食與便利商店的早餐方法。"],
+["外食策略","餐廳、便當、聚餐都能使用的實用選擇框架。"],
+["便利商店指南","在沒有廚房的日子，也能做出更好的選擇。"],
+["份量覺察","學會用手掌、拳頭與餐盤建立自然的份量感。"],
+["簡單活動","不用複雜健身，用最低有效活動量建立習慣。"],
+["壓力與情緒性進食","辨識壓力、疲勞與情緒對飲食選擇的影響。"],
+["旅行、聚會與失誤","學會在真實生活中調整，而不是因一次失誤放棄。"],
+["建立你的長期系統","把 90 天經驗整理成可以繼續使用的個人系統。"]
+];
+
+const lessons=[
+["今天的起點","先不要改變任何事情。花幾分鐘觀察今天的飲食、活動與生活節奏。"],
+["找出一個關鍵時刻","想想一天中最容易做出不理想選擇的時段，記錄它發生的原因。"],
+["設定你的最低標準","選擇一個非常容易做到的小行動，讓它成為今天的成功標準。"],
+["建立環境提示","把一個更好的選擇放到容易看到、容易取得的位置。"],
+["第一週回顧","回顧這週的觀察，選出下一週最值得保留的一個行動。"]
+];
+
+const actions=[
+"今天只做一個更好的飲食選擇，不要求整天完美。",
+"下一餐開始前，先停下來問自己：我真正需要的是什麼？",
+"今天安排一次 10 分鐘的輕鬆步行。",
+"選一份餐點時，先找蛋白質與蔬菜，再決定主要碳水來源。",
+"今天閱讀一個食品包裝的營養標示。",
+"外食時把含糖飲料換成無糖飲品或水。",
+"今天吃飯時刻意放慢速度，留意自己的飽足感。"
+];
+
+const titles=["重新開始與基準線","認識 GI 與碳水化合物","打造均衡餐盤","看懂食品標籤","早餐策略","外食策略","便利商店指南","份量覺察","簡單活動","壓力與情緒性進食","旅行、聚會與失誤","建立你的長期系統"];
+
+function getProgress(){
+  return JSON.parse(localStorage.getItem("reset90")||"{}");
+}
+function saveProgress(p){
+  localStorage.setItem("reset90",JSON.stringify(p));
+}
+function key(type,w,d){
+  return type+"-"+w+"-"+d;
+}
+function done(type,w,d){
+  return !!getProgress()[key(type,w,d)];
+}
+function toggle(type,w,d){
+  const p=getProgress();
+  const k=key(type,w,d);
+  p[k]=!p[k];
+  if(!p[k]) delete p[k];
+  saveProgress(p);
+  render();
+}
+function totalDone(){
+  return Object.keys(getProgress()).length;
+}
+function esc(s){
+  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+function go(path){
+  history.pushState({},'',path);
+  render();
+  window.scrollTo(0,0);
+}
+
+function layout(content){
+  return `
+  <div class="app">
+    <aside class="side">
+      <div style="font:24px Georgia;color:var(--g);margin:8px 10px 24px">90 天重整</div>
+      <a href="/dashboard">⌂ 今天</a>
+      <a href="/weeks/1">▦ 12 週計畫</a>
+      <a href="/progress">◷ 我的進度</a>
+      <a href="/bonus">✦ Bonus 工具</a>
+      <div style="margin:28px 10px 8px;font-size:11px;color:var(--muted);letter-spacing:1px">核心循環</div>
+      <div style="padding:10px;color:var(--g);font-weight:600">學習 → 選擇 → 行動 → 追蹤 → 回顧</div>
+    </aside>
+    <main class="main">${content}</main>
+  </div>`;
+}
+
+function landing(){
+  return `
+  <section class="wrap">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">90-DAY PRACTICAL HEALTH RESET</span>
+        <h1>吃得更聰明。<br>動得更簡單。<br>建立能持續的習慣。</h1>
+        <p>一套為真實生活設計的 90 天飲食與生活習慣系統。特別為外食、忙碌工作與沒有時間複雜計算的人設計。</p>
+        <div class="price">US$19 <span style="font:14px Inter;color:var(--muted)">一次付款・一次購買</span></div>
+        <div class="cta">
+          <a class="btn" href="/dashboard">開始我的 90 天重整 →</a>
+          <a class="btn ghost" href="/weeks/1">查看 12 週內容</a>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:22px">教育用途，不提供診斷、治療或個人化醫療建議。</p>
+      </div>
+      <div class="photo">
+        <div class="plate"></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <span class="kicker">WHY THIS WORKS</span>
+      <h2>不是另一套嚴格飲食規則。</h2>
+      <p class="muted" style="max-width:700px">你需要的不是更多「應該怎麼吃」的知識，而是一套能在早餐店、便當店、便利商店、聚餐與壓力大的工作日裡真正使用的方法。</p>
+      <div class="grid">
+        <div class="card"><b>01．更聰明的選擇</b><p class="muted">建立簡單判斷框架，不必每餐計算一大堆數字。</p></div>
+        <div class="card"><b>02．自在面對外食</b><p class="muted">學會在真實餐廳與便利商店環境中做選擇。</p></div>
+        <div class="card"><b>03．看懂食品標籤</b><p class="muted">抓住真正重要的資訊，減少被包裝與行銷誤導。</p></div>
+        <div class="card"><b>04．掌握份量</b><p class="muted">用視覺與手掌方法建立直覺，不追求完美。</p></div>
+        <div class="card"><b>05．簡單活動</b><p class="muted">用最低有效活動量，把運動變成日常的一部分。</p></div>
+        <div class="card"><b>06．處理壓力與失誤</b><p class="muted">學會調整，而不是一次失誤就放棄整個計畫。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="kicker">THE 90-DAY SYSTEM</span>
+      <h2>12 週，一步一步建立自己的方法。</h2>
+      <div class="steps">
+        <div class="step">學習</div><div class="step">選擇</div><div class="step">行動</div><div class="step">追蹤</div><div class="step">回顧</div><div class="step">調整</div>
+      </div>
+    </section>
+
+    <footer class="footer">90-Day Blood Sugar & Weight Reset · 教育性健康習慣產品<br>本產品不取代醫師或其他合格醫療專業人員提供的建議。</footer>
+  </section>`;
+}
+
+function dashboard(){
+  const p=totalDone(), pct=Math.min(100,Math.round(p/84*100));
+  return layout(`
+    <span class="kicker">TODAY</span>
+    <h1 class="h1">你的 90 天重整</h1>
+    <p class="muted">不用一次完成全部。今天只需要做下一個小行動。</p>
+
+    <div class="card" style="margin:28px 0">
+      <div style="display:flex;justify-content:space-between;gap:20px">
+        <b>整體進度</b><b>${pct}%</b>
+      </div>
+      <div class="bar" style="margin-top:12px"><i style="width:${pct}%"></i></div>
+      <p class="muted">${p} 個行動已完成。你的目標是持續，不是完美。</p>
+    </div>
+
+    <div class="lesson">
+      <div class="card">
+        <span class="kicker">CURRENT WEEK</span>
+        <h2 style="font:30px Georgia;color:var(--g)">第 1 週<br>重新開始與基準線</h2>
+        <p>先建立觀察與基準線，讓接下來的改變有一個清楚起點。</p>
+        <a class="btn" href="/weeks/1">進入第 1 週 →</a>
+      </div>
+      <div class="card">
+        <span class="kicker">TODAY'S ACTION</span>
+        <h2 style="font:30px Georgia;color:var(--g)">只做一個更好的選擇</h2>
+        <p>${actions[0]}</p>
+        <button class="btn" onclick="toggle('action',1,1)">${done('action',1,1)?"✓ 已完成":"完成今天行動"}</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="kicker">QUICK ACCESS</span>
+      <div class="grid">
+        <a class="card" href="/progress"><b>我的進度 →</b><p class="muted">查看完成狀態</p></a>
+        <a class="card" href="/bonus"><b>Bonus 工具 →</b><p class="muted">外食、標籤與便利商店</p></a>
+        <a class="card" href="/weeks/1"><b>12 週計畫 →</b><p class="muted">瀏覽完整課程</p></a>
+      </div>
+    </div>
+  `);
+}
+
+function weekPage(w){
+  const title=titles[w-1];
+  const outcome=weeks[w-1][1];
+  return layout(`
+    <span class="kicker">WEEK ${String(w).padStart(2,"0")} / 12</span>
+    <h1 class="h1">${esc(title)}</h1>
+    <p style="font-size:18px;max-width:720px">${esc(outcome)}</p>
+
+    <div class="card" style="margin:28px 0">
+      <b>本週節奏</b>
+      <p class="muted">5 天微課程 + 1 天彈性日 + 1 次週回顧。每天只需要完成一個小行動。</p>
+    </div>
+
+    <div class="lesson">
+      ${lessons.map((x,i)=>`
+        <a class="card" href="/lesson/${w}/${i+1}">
+          <span class="kicker">DAY ${i+1}</span>
+          <h2 style="font:25px Georgia;color:var(--g)">${esc(x[0])}</h2>
+          <p class="muted">${esc(x[1])}</p>
+          <span style="color:var(--g);font-weight:700">${done('lesson',w,i+1)?"✓ 已完成":"開始 →"}</span>
+        </a>`).join("")}
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <span class="kicker">FLEX DAY</span>
+      <h2 style="font:25px Georgia;color:var(--g)">彈性日</h2>
+      <p>補上尚未完成的內容，或單純休息。這不是失敗，而是系統的一部分。</p>
+      <button class="btn" onclick="toggle('flex',${w},1)">${done('flex',w,1)?"✓ 已完成":"完成彈性日"}</button>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <span class="kicker">WEEKLY REVIEW</span>
+      <h2 style="font:25px Georgia;color:var(--g)">本週回顧</h2>
+      <p>花 5 分鐘回答：什麼最容易做到？什麼最困難？下一週我想保留哪一個行動？</p>
+      <button class="btn" onclick="toggle('review',${w},1)">${done('review',w,1)?"✓ 已完成":"完成本週回顧"}</button>
+    </div>
+
+    <div class="cta">
+      ${w>1?`<a class="btn ghost" href="/weeks/${w-1}">← 上一週</a>`:""}
+      ${w<12?`<a class="btn" href="/weeks/${w+1}">下一週 →</a>`:`<a class="btn" href="/completion">完成 90 天 →</a>`}
+    </div>
+  `);
+}
+
+function lessonPage(w,d){
+  const l=lessons[(d-1)%lessons.length];
+  const action=actions[(w+d-2)%actions.length];
+  return layout(`
+    <span class="kicker">WEEK ${w} · DAY ${d}</span>
+    <h1 class="h1">${esc(l[0])}</h1>
+    <p style="font-size:18px;max-width:720px">${esc(l[1])}</p>
+
+    <div class="lesson" style="margin-top:30px">
+      <div class="card">
+        <span class="kicker">MICRO LESSON</span>
+        <h2 style="font:30px Georgia;color:var(--g)">今天只學一件事</h2>
+        <p>${esc(l[1])}</p>
+        <p>健康習慣不需要一次全部改變。把注意力放在一個可以重複的小決定，通常比追求一次完美的一天更容易持續。</p>
+      </div>
+      <div class="card">
+        <span class="kicker">TODAY'S ACTION</span>
+        <h2 style="font:30px Georgia;color:var(--g)">你的下一個小行動</h2>
+        <p>${esc(action)}</p>
+        <button class="btn" onclick="toggle('lesson',${w},${d})">${done('lesson',w,d)?"✓ 已完成":"標記為完成"}</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <b>提醒自己</b>
+      <p class="muted">你不是在追求「完美飲食」。你是在練習讓更好的選擇變得更容易。</p>
+    </div>
+
+    <div class="cta">
+      <a class="btn ghost" href="/weeks/${w}">← 回到第 ${w} 週</a>
+      <a class="btn" href="/action/${w}/${d}">進入今日行動 →</a>
+    </div>
+  `);
+}
+
+function actionPage(w,d){
+  const action=actions[(w+d-2)%actions.length];
+  return layout(`
+    <span class="kicker">TODAY'S ACTION</span>
+    <h1 class="h1">把今天的知識變成行動。</h1>
+    <div class="card" style="margin:30px 0;padding:35px">
+      <span class="kicker">WEEK ${w} · DAY ${d}</span>
+      <h2 style="font:32px Georgia;color:var(--g)">${esc(action)}</h2>
+      <p>不需要做得完美，只要完成一次。</p>
+      <button class="btn" onclick="toggle('action',${w},${d})">${done('action',w,d)?"✓ 今天已完成":"我完成了 →"}</button>
+    </div>
+    <a class="btn ghost" href="/weeks/${w}">回到課程</a>
+  `);
+}
+
+function progressPage(){
+  const p=totalDone();
+  return layout(`
+    <span class="kicker">MY PROGRESS</span>
+    <h1 class="h1">我的 90 天進度</h1>
+    <p class="muted">記錄不是用來評分你，而是幫你看見自己已經做了多少。</p>
+    <div class="card" style="margin:28px 0">
+      <div style="font:55px Georgia;color:var(--g)">${p}</div>
+      <p>已完成的學習與行動</p>
+      <div class="bar"><i style="width:${Math.min(100,Math.round(p/84*100))}%"></i></div>
+    </div>
+    <div class="grid">
+      ${weeks.map((w,i)=>`
+        <a class="card weekcard" href="/weeks/${i+1}">
+          <span class="kicker">WEEK ${i+1}</span>
+          <b>${esc(w[0])}</b>
+          <p class="muted">${esc(w[1])}</p>
+        </a>`).join("")}
+    </div>
+  `);
+}
+
+function bonusPage(){
+  const bonuses=[
+    ["外食快速指南","早餐店、便當、餐廳、聚餐時快速使用的選擇框架。"],
+    ["購物與便利商店速查","沒有時間煮飯時，快速組合更平衡的一餐。"],
+    ["食品標籤解碼器","掌握份量、碳水、糖與成分表的閱讀順序。"],
+    ["90 天習慣追蹤器","把每天的小行動變成看得見的連續紀錄。"],
+    ["緊急飲食指南","忙碌、旅行或臨時找不到理想餐點時的備案。"]
+  ];
+  return layout(`
+    <span class="kicker">BONUS LIBRARY</span>
+    <h1 class="h1">你的快速工具箱。</h1>
+    <p class="muted">把最常需要的決策方法集中在這裡，需要時打開就能使用。</p>
+    <div class="grid" style="margin-top:30px">
+      ${bonuses.map((b,i)=>`
+        <div class="card" style="min-height:210px">
+          <span class="kicker">BONUS ${i+1}</span>
+          <h2 style="font:25px Georgia;color:var(--g)">${b[0]}</h2>
+          <p>${b[1]}</p>
+          <button class="btn ghost" onclick="alert('這份工具已加入你的 90 天工具箱。實際使用時，請依照課程中的框架操作。')">開啟工具</button>
+        </div>`).join("")}
+    </div>
+  `);
+}
+
+function checkinPage(w){
+  return layout(`
+    <span class="kicker">WEEK ${w} CHECK-IN</span>
+    <h1 class="h1">本週回顧時間</h1>
+    <p>不用打分數。只需要誠實地看看這週發生了什麼。</p>
+    <div class="card">
+      <div class="check"><input type="checkbox" ${done('review',w,1)?"checked":""} onchange="toggle('review',${w},1)"><div><b>我知道這週哪個行動最容易做到。</b></div></div>
+      <div class="check"><input type="checkbox"><div><b>我知道哪個時刻最容易讓我偏離計畫。</b></div></div>
+      <div class="check"><input type="checkbox"><div><b>我知道下一週要保留的一個小習慣。</b></div></div>
+    </div>
+    <div class="cta"><a class="btn" href="/weeks/${w}">回到第 ${w} 週</a></div>
+  `);
+}
+
+function completionPage(){
+  return layout(`
+    <section style="text-align:center;padding:55px 10px">
+      <span class="eyebrow">90 DAYS COMPLETE</span>
+      <h1 class="h1" style="font-size:58px">你完成了 90 天。</h1>
+      <p style="font-size:19px;max-width:650px;margin:20px auto">真正的成果不是完美執行，而是你現在擁有一套可以繼續使用的方法。</p>
+      <div class="card" style="max-width:700px;margin:35px auto;text-align:left">
+        <span class="kicker">YOUR PERSONAL HEALTH PLAYBOOK</span>
+        <h2 style="font:32px Georgia;color:var(--g)">建立你的長期系統</h2>
+        <div class="check"><input type="checkbox"><div>我的 3 個最有效習慣</div></div>
+        <div class="check"><input type="checkbox"><div>我的外食策略</div></div>
+        <div class="check"><input type="checkbox"><div>我的壓力日備案</div></div>
+        <div class="check"><input type="checkbox"><div>我的旅行與聚會策略</div></div>
+        <div class="check"><input type="checkbox"><div>我下一個 30 天要維持的重點</div></div>
+      </div>
+      <a class="btn" href="/dashboard">回到我的首頁 →</a>
+    </section>
+  `);
+}
+
+function render(){
+  const path=location.pathname.replace(/\/+$/,"")||"/";
+  let html;
+  if(path==="/") html=landing();
+  else if(path==="/dashboard") html=dashboard();
+  else if(path==="/progress") html=progressPage();
+  else if(path==="/bonus") html=bonusPage();
+  else if(path==="/completion") html=completionPage();
+  else {
+    let m;
+    if((m=path.match(/^\/weeks\/(\d+)$/))) html=weekPage(Math.max(1,Math.min(12,+m[1])));
+    else if((m=path.match(/^\/lesson\/(\d+)\/(\d+)$/))) html=lessonPage(+m[1],+m[2]);
+    else if((m=path.match(/^\/action\/(\d+)\/(\d+)$/))) html=actionPage(+m[1],+m[2]);
+    else if((m=path.match(/^\/checkin\/(\d+)$/))) html=checkinPage(+m[1]);
+    else html=landing();
+  }
+  document.getElementById("site").innerHTML=html;
+}
+
+document.addEventListener("click",e=>{
+  const a=e.target.closest("a");
+  if(!a)return;
+  const url=new URL(a.href);
+  if(url.origin===location.origin && !a.target){
+    e.preventDefault();
+    go(url.pathname);
+  }
+});
+
+window.addEventListener("popstate",render);
+render();
+</script>
+
+<footer class="footer" style="max-width:1120px;margin:auto;padding-left:24px;padding-right:24px">
+  <b>健康與安全聲明</b><br>
+  本網站提供一般性的健康教育與生活習慣資訊，並非醫療服務。內容不構成診斷、治療、治癒或預防任何疾病的醫療建議，也不取代醫師或其他合格醫療專業人員的專業判斷。若你正在接受疾病治療、使用藥物，或有特殊健康需求，請與你的醫療專業人員討論適合你的做法。
+</footer>
+</body>
+</html>  
+
