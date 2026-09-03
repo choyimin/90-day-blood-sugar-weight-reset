@@ -3,7 +3,39 @@
   "buildCommand": "",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/week/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/weeks/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/lesson/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/action/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/progress",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bonus",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/completion",
       "destination": "/index.html"
     }
   ]
