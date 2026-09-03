@@ -1,402 +1,81 @@
-<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>90 天控糖與體重健康重整</title><style>
-:root{--g:#1f3d33;--g2:#315747;--sage:#6b7f71;--cream:#faf8f5;--sand:#e7dfd1;--mist:#e9eee9;--ink:#1e1e1e;--muted:#6f756f;--line:#e4e0d8;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.7 Inter,"Noto Sans TC",system-ui,sans-serif}button,a{font:inherit}a{text-decoration:none;color:inherit}.top{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:#fffdf9;position:sticky;top:0;z-index:5}.brand{font-family:Georgia,"Noto Serif TC",serif;font-size:24px;color:var(--g)}.nav{display:flex;gap:24px;color:var(--muted);font-size:14px}.btn{border:0;border-radius:999px;padding:12px 20px;background:var(--g);color:#fff;cursor:pointer;font-weight:700}.ghost{background:transparent;color:var(--g);border:1px solid var(--g)}.wrap{max-width:1120px;margin:auto;padding:50px 24px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:65px 0}.eyebrow{display:inline-block;border:1px solid #c9c1b4;border-radius:999px;padding:8px 16px;letter-spacing:3px;color:#557064;background:#f0ebe1;font-size:12px}.hero h1{font:clamp(44px,6vw,76px)/1.02 Georgia,"Noto Serif TC",serif;color:var(--g);margin:25px 0}.hero p{font-size:18px;color:#52605a;max-width:650px}.price{font:24px Georgia;margin:28px 0}.photo{min-height:440px;border-radius:22px;background:linear-gradient(135deg,#d9d0c1,#f4eee5 48%,#b8c5b8);display:grid;place-items:center;overflow:hidden}.plate{width:72%;height:72%;border-radius:50%;background:#f8f5ef;box-shadow:0 18px 50px #0001;position:relative}.plate:before{content:"🥗";font-size:120px;position:absolute;inset:0;display:grid;place-items:center}.section{padding:65px 0}.section h2{font:42px Georgia,"Noto Serif TC",serif;color:var(--g);margin:0 0 18px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.weekcard{min-height:190px}.weekcard b{color:var(--g);font-size:18px}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{padding:18px 10px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:15px}.app{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 70px)}.side{border-right:1px solid var(--line);padding:25px 16px;background:#f3efe8}.side a{display:block;padding:12px 14px;border-radius:12px;color:#52605a}.side a:hover{background:#fff}.main{max-width:980px;width:100%;margin:auto;padding:40px 28px}.kicker{color:var(--sage);letter-spacing:2px;font-size:12px}.h1{font:48px Georgia,"Noto Serif TC",serif;color:var(--g);margin:8px 0 18px}.bar{height:10px;background:#e4e0d8;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);width:0}.lesson{display:grid;grid-template-columns:1fr 1fr;gap:18px}.check{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}input[type=checkbox]{width:20px;height:20px;accent-color:var(--g)}.footer{padding:40px 0;color:var(--muted);font-size:12px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}@media(max-width:800px){.hero{grid-template-columns:1fr}.photo{min-height:300px}.grid,.lesson{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}.app{grid-template-columns:1fr}.side{display:none}.nav{display:none}.hero h1{font-size:48px}}@media(max-width:520px){.grid,.lesson{grid-template-columns:1fr}.wrap{padding:30px 18px}.top{padding:0 18px}.steps{grid-template-columns:1fr 1fr}}
-</style>
-<body>
-<header class="top">
-  <a class="brand" href="/">90 天健康重整</a>
-  <nav class="nav">
-    <a href="/dashboard">今天</a>
-    <a href="/weeks/1">12 週計畫</a>
-    <a href="/progress">進度</a>
-    <a href="/bonus">工具與 Bonus</a>
-  </nav>
-  <a class="btn" href="/dashboard">開始我的重整 →</a>
-</header>
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>90 天控糖與體重健康重整</title>
+<style>
+:root{--g:#1f3d33;--g2:#315747;--sage:#6b7f71;--cream:#faf8f5;--sand:#e7dfd1;--mist:#e9eee9;--ink:#1e1e1e;--muted:#6f756f;--line:#e4e0d8;--white:#fff;--shadow:0 16px 45px rgba(31,61,51,.08)}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:14px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea{font:inherit}a{text-decoration:none;color:inherit}.app{display:flex;min-height:100vh}.side{width:250px;background:#f3efe8;border-right:1px solid var(--line);padding:24px 16px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:20}.brand{display:flex;gap:10px;align-items:center;padding:2px 8px 24px}.logo{width:42px;height:42px;border-radius:12px;background:var(--g);color:white;display:grid;place-items:center;font-weight:800}.brand b{display:block;font-size:14px}.brand small{display:block;color:var(--muted);font-size:11px}.member{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px;margin-bottom:15px}.avatar{width:34px;height:34px;border-radius:50%;background:var(--sand);color:var(--g);display:grid;place-items:center;font-weight:800}.member span{display:block;color:var(--muted);font-size:11px}.nav{display:grid;gap:4px}.nav a{padding:11px 12px;border-radius:10px;color:#58615b;font-size:13px}.nav a.active,.nav a:hover{background:#e4eae4;color:var(--g);font-weight:700}.sidefoot{margin-top:auto;padding:10px}.sidefoot .small{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:7px}.bar{height:6px;border-radius:99px;background:#dcd9d1;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);width:0}.main{margin-left:250px;min-height:100vh;width:calc(100% - 250px)}.top{height:66px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;position:sticky;top:0;background:rgba(250,248,245,.94);backdrop-filter:blur(10px);z-index:10}.crumb{font-size:12px;color:var(--muted)}.topright{display:flex;gap:10px;align-items:center}.streak{background:#edf1ed;color:var(--g);padding:7px 10px;border-radius:99px;font-size:11px}.page{max-width:1120px;margin:auto;padding:42px 38px 80px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:10px;color:var(--sage);font-weight:800}.display{font:500 43px/1.08 Georgia,serif;margin:7px 0 14px;letter-spacing:-1px}.lead{color:var(--muted);max-width:680px}.grid{display:grid;gap:18px}.g2{grid-template-columns:1.35fr .65fr}.g3{grid-template-columns:repeat(3,1fr)}.g2equal{grid-template-columns:repeat(2,1fr)}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:var(--shadow)}.hero{background:var(--g);color:white;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}.hero .eyebrow{color:#c0d0c5}.hero h1{font:500 37px/1.1 Georgia,serif;margin:4px 0 8px;max-width:630px}.hero p{color:#d8e2dc;max-width:650px}.btn{border:0;border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:750;font-size:12px;display:inline-flex;justify-content:center;align-items:center;gap:6px}.primary{background:var(--g);color:#fff}.hero .primary{background:#fff;color:var(--g)}.soft{background:#eef2ed;color:var(--g)}.outline{background:white;border:1px solid var(--line);color:var(--g)}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.section{margin-top:34px}.section h2{font:500 27px/1.15 Georgia,serif;margin:5px 0 12px}.muted{color:var(--muted)}.next h3{font:500 25px/1.15 Georgia,serif;margin:7px 0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat b{font:500 27px Georgia,serif;color:var(--g);display:block}.stat span{font-size:11px;color:var(--muted)}.weekrow{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 17px}.weekno{font-size:11px;font-weight:800;color:var(--sage)}.weekrow h3{font-size:14px;margin:0 0 4px}.weekrow p{font-size:11px;color:var(--muted);margin:0}.tag{font-size:10px;padding:6px 9px;border-radius:99px;background:#f0eee8;color:#777}.tag.current{background:#e4eee7;color:var(--g);font-weight:700}.weekhero{padding:28px}.weekhero h1{font:500 38px/1.1 Georgia,serif;margin:4px 0 9px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}.pill{background:#edf1ed;color:var(--g);padding:7px 10px;border-radius:99px;font-size:10px}.tabs{display:flex;gap:5px;border-bottom:1px solid var(--line);margin-top:22px}.tabs button{border:0;background:none;padding:11px 13px;color:var(--muted);cursor:pointer;font-size:11px}.tabs button.active{color:var(--g);font-weight:800;border-bottom:2px solid var(--g)}.lesson{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px}.lesson h3{font-size:13px;margin:3px 0}.lesson small{color:var(--sage);font-size:10px;font-weight:800}.checkcircle{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--g)}.done .checkcircle{background:var(--g);color:white;border-color:var(--g)}.action{display:grid;grid-template-columns:1fr 320px;gap:18px}.action h1,.check h1,.completion h1{font:500 34px/1.12 Georgia,serif;margin:6px 0 12px}.checkbox{border:1px solid var(--line);border-radius:13px;padding:13px;display:flex;gap:10px;margin:22px 0}.checkbox input{accent-color:var(--g);margin-top:3px}.field label{display:block;font-weight:700;font-size:11px;margin-bottom:6px}.field textarea,.field input{width:100%;background:#fcfbf8;border:1px solid var(--line);border-radius:10px;padding:11px;outline:0}.rating{display:flex;gap:8px;margin:8px 0 20px}.rating button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:white;color:var(--muted);cursor:pointer}.rating button.sel{background:var(--g);color:#fff;border-color:var(--g)}.bonus{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.bonus .num{font-size:10px;color:var(--sage);font-weight:800}.bonus h3{font-size:15px;margin:8px 0}.bonus p{font-size:11px;color:var(--muted)}.progressHero{background:var(--g);color:#fff;border-radius:20px;padding:27px;display:flex;justify-content:space-between;align-items:end}.progressHero h1{font:500 36px Georgia,serif;margin:4px 0 7px}.progressHero p{color:#d6e0da}.big{font:500 55px Georgia,serif}.track{height:9px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin-top:18px}.track i{display:block;height:100%;background:#fff;width:0}.playbook{background:#fff}.seal{width:82px;height:82px;border-radius:50%;background:#e8f0e6;color:var(--g);display:grid;place-items:center;font-size:40px;font-weight:800}.playgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.menu{display:none}.toast{position:fixed;right:22px;bottom:22px;background:var(--g);color:#fff;padding:11px 14px;border-radius:10px;font-size:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:99}.toast.show{opacity:1;transform:none}@media(max-width:850px){.side{transform:translateX(-100%);transition:.2s}.side.open{transform:none}.main{margin-left:0;width:100%}.menu{display:block;border:0;background:none;font-size:21px}.top{padding:0 18px}.page{padding:30px 18px}.g2,.action{grid-template-columns:1fr}.g3,.stats,.g2equal,.playgrid{grid-template-columns:1fr}.lesson-grid{grid-template-columns:1fr}.display{font-size:35px}.hero h1{font-size:32px}}
 
-<div id="site"></div>
+.landing{min-height:100vh;background:var(--cream);color:var(--ink)}.landing-nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5vw}.landing-nav .brand{padding:0}.landing-hero{max-width:1180px;margin:auto;padding:80px 5vw 90px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.landing-hero h1{font:500 clamp(46px,6vw,78px)/1.02 Georgia,serif;letter-spacing:-2px;color:var(--g);margin:14px 0 24px}.landing-lead{font-size:20px;line-height:1.7;color:#56615b;max-width:690px}.price{font:500 34px Georgia,serif;color:var(--g);margin:28px 0}.price span{font:16px Inter,system-ui,sans-serif;color:var(--muted)}.bigbtn{padding:16px 22px;border-radius:999px;margin:5px 8px 5px 0}.landing-photo{min-height:520px;border-radius:26px;background:linear-gradient(135deg,#dfe8df,#efe7d8);display:flex;align-items:end;justify-content:center;padding:28px;box-shadow:var(--shadow)}.photo-card{background:rgba(255,255,255,.86);border:1px solid rgba(31,61,51,.12);border-radius:18px;padding:22px;width:90%;font:500 24px Georgia,serif;color:var(--g)}.photo-card small{font:13px Inter,system-ui,sans-serif;color:var(--muted)}.landing-section{padding:90px 7vw;text-align:center;max-width:1200px;margin:auto}.landing-section h2{font:500 48px/1.12 Georgia,serif;color:var(--g);margin:12px auto 18px;max-width:900px}.landing-section p{font-size:18px;line-height:1.7;color:var(--muted);max-width:820px;margin:0 auto 28px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}.feature-grid div{padding:32px;border-right:1px solid var(--line)}.feature-grid div:last-child{border-right:0}.feature-grid b{display:block;font:500 36px Georgia,serif;color:var(--g)}.feature-grid span{display:block;color:var(--muted);margin-top:6px}.landing-section.dark{max-width:none;background:var(--g);color:#fff}.landing-section.dark h2{color:#fff}.landing-section.dark p{color:#d9e3dd}.landing-foot{text-align:center;padding:30px;color:var(--muted);font-size:11px;border-top:1px solid var(--line)}
+@media(max-width:850px){.landing-hero{grid-template-columns:1fr;padding-top:55px}.landing-photo{min-height:340px}.landing-section h2{font-size:36px}.feature-grid{grid-template-columns:1fr}.feature-grid div{border-right:0;border-bottom:1px solid var(--line)}.feature-grid div:last-child{border-bottom:0}.landing-lead{font-size:17px}}
 
+/* Editorial Wellness visual restoration */
+.landing{background:var(--cream);color:var(--ink)}
+.landing-nav{max-width:1240px;margin:auto;height:82px;padding:0 32px;background:transparent;border-bottom:0}
+.landing-nav .brand{display:flex;gap:12px;align-items:center}
+.landing-nav .brand .logo{width:42px;height:42px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font:700 13px Inter}
+.landing-nav .brand b{display:block;font:500 22px Georgia,"Noto Serif TC",serif;color:var(--g)}
+.landing-nav .brand small{display:block;color:var(--sage);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.landing-hero{max-width:1240px;margin:auto;padding:48px 32px 72px;display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:stretch}
+.landing-hero h1{font:500 clamp(48px,5.6vw,76px)/.98 Georgia,"Noto Serif TC",serif;letter-spacing:-2px;color:var(--g);margin:18px 0 24px}
+.landing-lead{font-size:18px;line-height:1.75;color:#56615b;max-width:590px}
+.editorial-visual{display:grid;grid-template-columns:1.55fr .9fr;grid-template-rows:1fr 1fr;gap:10px;min-height:520px}
+.editorial-visual .img{border-radius:18px;overflow:hidden;background:var(--sand);position:relative}
+.editorial-visual .img img{width:100%;height:100%;object-fit:cover;display:block}
+.editorial-visual .mainimg{grid-row:1 / span 2}
+.editorial-visual .caption{position:absolute;left:16px;bottom:14px;color:#fff;font:500 20px Georgia,serif;text-shadow:0 1px 10px #0008}
+.editorial-visual .caption small{display:block;font:11px Inter,sans-serif;letter-spacing:1px;margin-top:3px}
+.editorial-quote{position:absolute;right:18px;top:16px;background:rgba(250,248,245,.9);padding:12px 15px;border-radius:12px;color:var(--g);font:16px Georgia,serif;max-width:180px}
+.price{font:500 30px Georgia,serif;color:var(--g);margin:26px 0}
+.price span{font:14px Inter,system-ui,sans-serif;color:var(--muted)}
+.bigbtn{padding:15px 22px;border-radius:999px;margin:5px 8px 5px 0}
+.landing-section{padding:82px 32px;text-align:center;max-width:1240px;margin:auto}
+.landing-section h2{font:500 46px/1.12 Georgia,"Noto Serif TC",serif;color:var(--g);margin:12px auto 18px;max-width:900px}
+.landing-section p{font-size:17px;line-height:1.75;color:var(--muted);max-width:820px;margin:0 auto 28px}
+.editorial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:42px;text-align:left}
+.editorial-grid .tile{min-height:230px;border-radius:18px;overflow:hidden;position:relative;background:#ddd}
+.editorial-grid .tile img{width:100%;height:100%;object-fit:cover;display:block}
+.editorial-grid .tile span{position:absolute;left:16px;bottom:14px;color:#fff;font:500 22px Georgia,serif;text-shadow:0 1px 10px #0008}
+.editorial-grid .tile small{display:block;font:10px Inter,sans-serif;letter-spacing:1.5px;margin-top:4px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.feature-grid div{padding:32px;border-right:1px solid var(--line)}
+.feature-grid div:last-child{border-right:0}
+.feature-grid b{display:block;font:500 36px Georgia,serif;color:var(--g)}
+.feature-grid span{display:block;color:var(--muted);margin-top:6px}
+.landing-section.dark{max-width:none;background:var(--g);color:#fff}
+.landing-section.dark h2{color:#fff}.landing-section.dark p{color:#d9e3dd}
+.landing-foot{text-align:center;padding:30px;color:var(--muted);font-size:11px;border-top:1px solid var(--line)}
+@media(max-width:850px){.landing-hero{grid-template-columns:1fr;padding:35px 20px 55px}.editorial-visual{min-height:420px}.editorial-grid{grid-template-columns:1fr 1fr}.landing-section{padding:65px 20px}.feature-grid{grid-template-columns:1fr}.feature-grid div{border-right:0;border-bottom:1px solid var(--line)}.feature-grid div:last-child{border-bottom:0}}
+@media(max-width:520px){.editorial-visual{grid-template-columns:1fr 1fr;min-height:360px}.landing-hero h1{font-size:48px}.editorial-grid{grid-template-columns:1fr}.landing-nav{padding:0 18px}}
+</style></head><body>
+<div class="app"><aside class="side" id="side"><a class="brand" href="#/dashboard"><span class="logo">90</span><span><b>90 天健康重整</b><small>控糖與體重</small></span></a><div class="member"><span class="avatar">A</span><span><b>我的 90 天重整</b><span>第 <strong id="side第">1</strong>／90 天</span></span></div><nav class="nav"><a href="#/dashboard" data-nav="dashboard">首頁</a><a href="#/progress" data-nav="progress">進度</a><a href="#/bonus" data-nav="bonus">加值資源庫</a><a href="#/completion" data-nav="completion">我的健康行動手冊</a></nav><div class="sidefoot"><div class="small"><span>90 天進度</span><b id="sidePct">0%</b></div><div class="bar"><i id="sideBar"></i></div></div></aside><main class="main"><header class="top"><div style="display:flex;align-items:center;gap:12px"><button class="menu" id="menu">☰</button><span class="crumb" id="crumb">你的重整計畫</span></div><div class="topright"><span class="streak" id="streak">連續 0 天</span><span class="avatar">A</span></div></header><div id="view"></div></main></div><div class="toast" id="toast"></div>
 <script>
-const weeks=[
-["重新開始與基準線","建立你的起點，從觀察而不是完美開始。"],
-["認識 GI 與碳水化合物","理解食物如何影響餐後反應，學會更聰明地選擇。"],
-["打造均衡餐盤","用簡單的餐盤結構，讓每一餐更容易平衡。"],
-["看懂食品標籤","不用成為營養專家，也能快速讀懂包裝食品。"],
-["早餐策略","建立適合忙碌早晨、外食與便利商店的早餐方法。"],
-["外食策略","餐廳、便當、聚餐都能使用的實用選擇框架。"],
-["便利商店指南","在沒有廚房的日子，也能做出更好的選擇。"],
-["份量覺察","學會用手掌、拳頭與餐盤建立自然的份量感。"],
-["簡單活動","不用複雜健身，用最低有效活動量建立習慣。"],
-["壓力與情緒性進食","辨識壓力、疲勞與情緒對飲食選擇的影響。"],
-["旅行、聚會與失誤","學會在真實生活中調整，而不是因一次失誤放棄。"],
-["建立你的長期系統","把 90 天經驗整理成可以繼續使用的個人系統。"]
-];
+const weeks=[{"week":1,"title":"重新開始與基準","outcome":"建立務實的起點，找出最容易做到、又最有影響力的一個改變","lessons":["為什麼日常選擇很重要","了解你的起點","80% 原則","找出最大的阻力","建立第一個簡單習慣"],"daily_actions":["記錄一餐平常的飲食，不評價自己。","留意一餐中讓你感到滿足的地方。","找出今天最困難的一個飲食決定。","在一次非預期的點心前，先停下 5 分鐘。","選一個明天也能重複的小改變。","彈性日：在任何真實生活情境中運用本週技巧。","每週回顧：什麼有效？什麼困難？接下來要重複什麼？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":2,"title":"認識 GI 與碳水化合物","outcome":"了解碳水化合物的品質、份量與食物搭配，不恐懼也不需要完全排除。","lessons":["什麼是碳水化合物？","什麼是 GI？","GI 與份量大小","為什麼食物搭配很重要","更好的碳水化合物選擇"],"daily_actions":["列出今天吃到的主要碳水化合物食物。","從份量與情境比較兩種碳水化合物食物。","在一餐中把碳水化合物與蛋白質搭配。","在一餐加入富含纖維的食物。","選一種你喜歡的碳水化合物，練習合理份量。","彈性日：外食時運用本週原則。","每週回顧：什麼讓碳水化合物的選擇更容易？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":3,"title":"打造均衡餐盤","outcome":"用簡單的視覺化餐盤方法，做出有飽足感又均衡的一餐。","lessons":["均衡餐盤","蛋白質","富含纖維的食物","非澱粉類蔬菜","組合一頓真實的餐"],"daily_actions":["打造一份均衡餐盤。","在一餐加入非澱粉類蔬菜。","確認一餐中有明確的蛋白質來源。","用視覺方式調整碳水化合物份量。","拍下一餐均衡餐盤，作為自己的參考。","彈性日：用手邊現有食物組合一份均衡餐。","每週回顧：哪一種餐盤模式最容易做到？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":4,"title":"讀懂食品標籤","outcome":"有信心地閱讀每份量、總碳水化合物、添加糖、纖維與蛋白質。","lessons":["每份量","總碳水化合物","添加糖","纖維","讀懂完整標籤"],"daily_actions":["讀一個食品標籤，找出每份量。","在一項產品上找出總碳水化合物。","找到標示出的添加糖。","找到纖維與蛋白質。","用五項檢查完整閱讀一項產品，判斷它是否適合你的日常。","彈性日：在商店比較兩項產品。","每週回顧：之後讀標籤時，你會先看哪一項？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":5,"title":"早餐策略","outcome":"為在家、工作與忙碌早晨建立三個可以反覆使用的早餐選擇。","lessons":["為什麼早餐可以成為有用的固定點","常見早餐陷阱","蛋白質＋纖維","更好的便利選擇","建立你的早餐公式"],"daily_actions":["嘗試一份蛋白質＋纖維早餐。","找出你平常早餐中的一個陷阱。","建立早餐預設選擇 #1。","建立早餐預設選擇 #2。","建立早餐預設選擇 #3。","彈性日：忙碌早晨使用其中一個預設選擇。","每週回顧：選出最容易執行的早餐預設。"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":6,"title":"外食策略","outcome":"在餐廳、外送、商務餐與社交聚餐中做出務實選擇。","lessons":["餐廳決策框架","早餐店","速食","餐廳與外送","商務餐與社交聚餐"],"daily_actions":["在一餐中使用三步驟餐廳決策框架。","在早餐店或咖啡店練習。","用外送或外帶練習。","在商務餐中練習。","在社交聚餐中練習，不追求完美。","彈性日：選擇當下能做到的最佳選項。","每週回顧：哪一個決策步驟最有幫助？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":7,"title":"便利商店指南","outcome":"當沒有時間或條件下廚時，也能組合出更好的餐。","lessons":["如何逛便利商店","蛋白質選擇","即食蔬菜","飲料","組合一份便利商店餐"],"daily_actions":["用蛋白質＋纖維組合一份便利商店餐。","找出兩個實用的蛋白質選擇。","找出一個即食蔬菜或富含纖維的選擇。","比較不同飲料選項。","建立你的便利商店常用餐。","彈性日：在真實情境中使用餐點組合器。","每週回顧：下次你會買什麼？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":8,"title":"份量覺察","outcome":"使用視覺化份量提示，而不是每一餐都執著測量。","lessons":["為什麼份量很重要","手掌估份量法","餐盤法","餐廳份量","辨識飽足感"],"daily_actions":["用手掌估份量法完成一餐。","用餐盤法完成一餐。","留意餐廳提供的份量大小。","一餐吃到一半時停下來，感受自己的飽足程度。","不秤食物，練習份量覺察。","彈性日：使用當下最簡單的視覺提示。","每週回顧：哪一個提示最自然？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":9,"title":"簡單運動","outcome":"透過走路、活動休息與簡單肌力，建立可以重複的最低活動量。","lessons":["為什麼活動很重要","走路","打斷久坐時間","簡單肌力","建立你的最低活動量"],"daily_actions":["走路 10 分鐘。","打斷一次長時間久坐。","如果適合，餐後再短走一段。","嘗試一次簡單的徒手運動。","選定你的個人最低活動量。","彈性日：把活動拆成幾個小段累積。","每週回顧：哪一種活動你可以持續？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":10,"title":"壓力與情緒性飲食","outcome":"辨識觸發因素、先停一下、選擇因應方式，並在失誤後不帶羞愧地恢復。","lessons":["壓力與食物選擇","辨識情緒性飲食觸發因素","10 分鐘暫停","更好的因應選項","不帶羞愧地恢復"],"daily_actions":["為壓力程度 1–5 分，並記下一個觸發因素。","留意一次飲食選擇是否發生在壓力、無聊或飢餓之後。","在非預期的進食決定前，嘗試先停 10 分鐘。","選擇一個非食物的因應方式。","練習不自我批判地重新開始。","彈性日：使用「辨識 → 暫停 → 選擇」。","每週回顧：什麼讓壓力大的時刻更容易處理？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":11,"title":"旅行、聚會與失誤","outcome":"處理不完美的情境，並回到下一個正常選擇。","lessons":["旅行中的飲食","節日與慶祝","社交壓力","吃太多之後怎麼辦","無罪惡感重整"],"daily_actions":["規劃一餐適合旅行的餐點。","練習一個社交活動策略。","準備一句應對食物壓力的話。","如果吃太多，就回到下一餐正常吃。","寫下你的個人失誤恢復計畫。","彈性日：在真實生活中運用框架。","每週回顧：你能多快恢復，而不需要懲罰自己？"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]},{"week":12,"title":"建立你的長期系統","outcome":"把真正有效的方法轉化成個人、可持續的健康行動手冊。","lessons":["什麼真的有效？","你的個人飲食規則","你的預設餐點","你的最低活動量","你的長期計畫"],"daily_actions":["列出最有幫助的三個習慣。","寫下三條個人飲食規則。","選出三個預設餐點。","定義你的最低活動量。","寫下你的長期每週回顧流程。","彈性日：測試你的個人行動手冊。","第 90 天回顧：建立你的個人健康行動手冊。"],"review_prompts":["什麼有效？","什麼感覺困難？","下週你要重複什麼？"]}];
+const bonuses=[["外食快速指南","餐廳、外送與社交聚餐時的簡單決策框架。"],["購物與便利商店速查表","時間有限或選擇有限時，快速組合實用餐點。"],["食品標籤解碼器","快速查閱每份量、碳水化合物、添加糖與纖維。"],["90 天習慣追蹤器","看見自己的模式，不需要追求完美。"],["緊急飲食指南","當一天沒有照計畫走時，知道下一步怎麼做。"]];
+let state=JSON.parse(localStorage.getItem('resetDemo')||'null')||{lessons:{},actions:{},reviews:{},playbook:{},rating:{}};
+const key=(t,w,n)=>t+'-'+w+'-'+n; const save=()=>localStorage.setItem('resetDemo',JSON.stringify(state));
+function stats(){let l=0,a=0,r=0;weeks.forEach(w=>{w.lessons.forEach((_,i)=>l+=!!state.lessons[key('l',w.week,i+1)]);w.daily_actions.forEach((_,i)=>a+=!!state.actions[key('a',w.week,i+1)]);r+=!!state.reviews[w.week]});let done=l+a+r;return{l,a,r,done,pct:Math.round(done/(60+84+12)*100)}}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function setTop(c){document.getElementById('crumb').textContent=c;const s=stats();document.getElementById('sidePct').textContent=s.pct+'%';document.getElementById('sideBar').style.width=s.pct+'%';document.getElementById('side第').textContent=Math.min(90,Math.max(1,s.done+1));document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'));}
+function go(h){location.hash=h}
+function dashboard(){setTop('你的重整計畫');const s=stats();let current=1;for(let w of weeks){let total=w.lessons.length+w.daily_actions.length+1,done=w.lessons.reduce((n,_,i)=>n+!!state.lessons[key('l',w.week,i+1)],0)+w.daily_actions.reduce((n,_,i)=>n+!!state.actions[key('a',w.week,i+1)],0)+!!state.reviews[w.week];if(done<total){current=w.week;break}else current=w.week}const w=weeks[current-1];return `<div class="page"><div class="grid g2"><section class="card hero"><div><p class="eyebrow">90-第 PRACTICAL HEALTH RESET</p><h1>Welcome back. Let's make the next choice a little easier.</h1><p>Learn one useful idea, apply it in real life, and build a system you can actually repeat.</p></div><div><span class="pill" style="background:rgba(255,255,255,.12);color:white">第 ${Math.min(90,s.done+1)}／90 天 · 第 ${current}</span><div style="margin-top:15px"><a class="btn primary" href="#/week/${current}">Continue 第 ${current} →</a></div></div></section><section class="card next"><div><p class="eyebrow">UP NEXT</p><h3>${esc(w.lessons[0])}</h3><p class="muted">${esc(w.outcome)}</p></div><div style="display:grid;gap:8px"><a class="btn primary" href="#/lesson/${current}/1">Continue lesson</a><a class="btn outline" href="#/action/${current}/1">今天的行動</a></div></section></div><section class="section"><div class="section-head row"><div><p class="eyebrow">YOUR 90-第 PROGRESS</p><h2>Small steps create momentum.</h2></div></div><div class="stats"><div class="card stat"><b>${s.l}/60</b><span>課程 completed</span></div><div class="card stat"><b>${s.a}/84</b><span>Daily actions completed</span></div><div class="card stat"><b>${s.r}/12</b><span>第ly check-ins</span></div></div></section><section class="section"><div class="row"><div><p class="eyebrow">12-週 ROADMAP</p><h2>你的完整旅程</h2></div><a class="btn soft" href="#/progress">View progress →</a></div><div class="grid" style="margin-top:14px">${weeks.map(w=>`<a class="weekrow" href="#/week/${w.week}"><span class="weekno">週 ${String(w.week).padStart(2,'0')}</span><div><h3>${esc(w.title)}</h3><p>${esc(w.outcome)}</p></div><span class="tag ${w.week===current?'current':''}">${w.week===current?'Current':'Open'}</span></a>`).join('')}</div></section></div>`}
+function week(n){const w=weeks[n-1];setTop('第 '+n);return `<div class="page"><a class="muted" href="#/dashboard">← 首頁</a><section class="card weekhero section"><p class="eyebrow">週 ${String(n).padStart(2,'0')}</p><h1>${esc(w.title)}</h1><p class="lead">${esc(w.outcome)}</p><div class="pills"><span class="pill">5 課程</span><span class="pill">7 每日行動</span><span class="pill">1 第ly 回顧</span></div><div class="tabs"><button class="active">Overview</button><button onclick="go('#/lesson/${n}/1')">課程</button><button onclick="go('#/action/${n}/1')">每日行動</button><button onclick="go('#/checkin/${n}')">回顧</button></div></section><section class="section grid g2equal"><div class="card"><p class="eyebrow">本週目標</p><h2>學習 → 應用 → 重複</h2><p class="muted">把本週能力用在日常情境。目標是建立有用的預設選擇，而不是完美的一週。</p><a class="btn primary" href="#/lesson/${n}/1">開始下一課 →</a></div><div class="card"><p class="eyebrow">本週</p><div class="stats"><div class="stat"><b>5</b><span>課程</span></div><div class="stat"><b>7</b><span>行動</span></div><div class="stat"><b>1</b><span>回顧</span></div></div></div></section><section class="section"><p class="eyebrow">課程</p><h2>建立能力</h2><div class="grid g2equal" style="margin-top:14px">${w.lessons.map((t,i)=>{let d=!!state.lessons[key('l',n,i+1)];return `<a class="lesson ${d?'done':''}" href="#/lesson/${n}/${i+1}"><div><small>課程 ${i+1}</small><h3>${esc(t)}</h3></div><span class="checkcircle">${d?'✓':'→'}</span></a>`}).join('')}</div></section><section class="section"><p class="eyebrow">每日行動</p><h2>在真實生活中練習</h2><div class="grid" style="margin-top:14px">${w.daily_actions.map((t,i)=>{let d=!!state.actions[key('a',n,i+1)];return `<a class="lesson ${d?'done':''}" href="#/action/${n}/${i+1}"><div><small>第 ${i+1}</small><h3>${esc(t)}</h3></div><span class="checkcircle">${d?'✓':'→'}</span></a>`}).join('')}</div></section><section class="section"><div class="card row"><div><p class="eyebrow">週LY REVIEW</p><h2>停下來．觀察．調整</h2><p class="muted">Capture what worked, what was difficult, and what you will repeat.</p></div><a class="btn primary" href="#/checkin/${n}">${state.reviews[n]?'已完成回顧 ✓':'開始每週回顧 →'}</a></div></section></div>`}
+function lesson(w,l){const x=weeks[w-1],title=x.lessons[l-1],done=!!state.lessons[key('l',w,l)];setTop(`第 ${w} · Lesson ${l}`);let principles=['改變之前先觀察。平常的一天就是有用的資料。','找出模式，而不是只看單一餐。','選擇一個仍有意義、但最容易做到的小改變。','針對真正困難的時刻設計，而不是理想中的一天。','讓下一個有幫助的行動變得清楚又容易。'];return `<div class="page"><a class="muted" href="#/week/${w}">← 第 ${w}</a><section class="card content section"><p class="eyebrow">課程 ${l} OF 5 · 週 ${w}</p><h1 style="font:500 38px Georgia,serif;margin:5px 0 12px">${esc(title)}</h1><p class="lead">健康習慣來自一次又一次的日常選擇。目標是把本週的觀念變成能在真實生活中使用的實用能力。</p><div class="card" style="background:#f5f4ef;box-shadow:none;margin-top:22px"><p class="eyebrow">實用觀念</p><p>${principles[(l-1)%5]}</p></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px"><button class="btn primary" onclick="completeLesson(${w},${l})">${done?'已完成 ✓':'標記課程完成'}</button><a class="btn soft" href="#/action/${w}/${Math.min(7,l)}">Go to daily action →</a></div></section><section class="section card"><p class="eyebrow">KEEP IT SIMPLE</p><h2>進步比完美重要</h2><p class="muted">把這堂課的一個想法用在一個真實情境中。你正在建立可以重複的能力。</p></section></div>`}
+function completeLesson(w,l){state.lessons[key('l',w,l)]=true;save();toast('課程已儲存');render()}
+function action(w,d){const x=weeks[w-1],text=x.daily_actions[d-1],done=!!state.actions[key('a',w,d)];setTop(`第 ${w} · 第 ${d}`);return `<div class="page"><a class="muted" href="#/week/${w}">← 第 ${w}</a><section class="action section"><div class="card"><p class="eyebrow">第 ${d} · 週 ${w}</p><h1>今天的行動</h1><p class="lead">${esc(text)}</p><label class="checkbox"><input id="actionCheck" type="checkbox" ${done?'checked':''}><span>我完成了這項行動——或至少真誠地嘗試了。</span></label><button class="btn primary" onclick="saveAction(${w},${d})">${done?'已儲存 ✓':'儲存今天的進度'}</button></div><aside class="grid"><div class="card"><p class="eyebrow">記住</p><h2>一個小行動就夠了。</h2><p class="muted">如果今天很混亂，就回到下一個正常選擇，不需要重新開始。</p></div><div class="card"><p class="eyebrow">相關內容</p><a class="btn soft" href="#/lesson/${w}/${Math.min(5,d)}">開啟課程 →</a></div></aside></section></div>`}
+function saveAction(w,d){state.actions[key('a',w,d)]=document.getElementById('actionCheck').checked;save();toast('進度 saved');render()}
+function checkin(w){const x=weeks[w-1],ex=state.reviews[w]||{rating:0,note:''};setTop(`第 ${w} · 回顧`);return `<div class="page"><a class="muted" href="#/week/${w}">← 第 ${w}</a><section class="card check section"><p class="eyebrow">週 ${w} REVIEW</p><h1>停下來．觀察．調整</h1><p class="lead">There is no score to pass. Use a minute to capture what worked and what you want to repeat.</p><div class="field" style="margin-top:24px"><label>這週感覺如何？</label><div class="rating">${[1,2,3,4,5].map(n=>`<button class="rate ${ex.rating===n?'sel':''}" onclick="rate(${n})">${n}</button>`).join('')}</div></div><div class="field"><label for="reviewNote">什麼有效、什麼困難，以及你接下來要重複什麼？</label><textarea id="reviewNote" rows="7" placeholder="寫下幾句真實的感受……">${esc(ex.note||'')}</textarea></div><button class="btn primary" style="margin-top:15px" onclick="saveReview(${w})">儲存每週回顧</button></section></div>`}
+let chosen=0;function rate(n){chosen=n;document.querySelectorAll('.rate').forEach(x=>x.classList.remove('sel'));event.target.classList.add('sel')}
+function saveReview(w){state.reviews[w]={rating:chosen||state.reviews[w]?.rating||0,note:document.getElementById('reviewNote').value};save();toast('第ly check-in saved');render()}
+function progress(){setTop('進度');const s=stats();return `<div class="page"><p class="eyebrow">你的進度</p><section class="progressHero"><div><h1>保持前進的節奏。</h1><p>${s.done} 個已完成步驟，持續在你的 90 天系統中前進。</p><div class="track"><i style="width:${s.pct}%"></i></div></div><div class="big">${s.pct}%</div></section><section class="section"><div class="stats"><div class="card stat"><b>${s.l}/60</b><span>課程</span></div><div class="card stat"><b>${s.a}/84</b><span>每日行動</span></div><div class="card stat"><b>${s.r}/12</b><span>每週回顧</span></div></div></section><section class="section"><p class="eyebrow">每週進度</p><h2>你的完整旅程</h2><div class="grid" style="margin-top:14px">${weeks.map(w=>{let l=w.lessons.filter((_,i)=>state.lessons[key('l',w.week,i+1)]).length,a=w.daily_actions.filter((_,i)=>state.actions[key('a',w.week,i+1)]).length,p=Math.round((l+a+(state.reviews[w.week]?1:0))/13*100);return `<a class="weekrow" href="#/week/${w.week}"><span class="weekno">週 ${String(w.week).padStart(2,'0')}</span><div><h3>${esc(w.title)}</h3><p>${l}/5 課程 · ${a}/7 行動 · ${state.reviews[w.week]?'已完成回顧':'尚未回顧'}</p></div><span class="tag ${p===100?'current':''}">${p===100?'完成':p+'%'}</span></a>`}).join('')}</div></section></div>`}
+function bonus(){setTop('加值資源庫');return `<div class="page"><p class="eyebrow">加值資源庫</p><h1 class="display">把真正有用的工具放在手邊。</h1><p class="lead">五份實用資源，專為你需要快速答案的時刻設計，而不是再上一堂長課。</p><section class="section grid g3">${bonuses.map((b,i)=>`<article class="bonus"><div class="num">BONUS ${String(i+1).padStart(2,'0')}</div><h3>${esc(b[0])}</h3><p>${esc(b[1])}</p><button class="btn soft" onclick="openBonus(${i})">查看資源 →</button></article>`).join('')}</section></div>`}
+function openBonus(i){toast(bonuses[i][0]+' opened — resource preview ready')}
+function completion(){setTop('我的健康行動手冊');const pb=state.playbook||{};const s=stats();return `<div class="page"><section class="card completion section"><div class="seal">✓</div><p class="eyebrow" style="margin-top:20px">你的長期系統</p><h1>${s.pct>=90?'恭喜你——你已建立自己的健康行動手冊。':'你的健康行動手冊正在成形。'}</h1><p class="lead">把真正有效的方法整理成個人系統，讓你在 90 天之後也能持續使用。</p></section><section class="section playgrid"><div class="card"><p class="eyebrow">飲食規則</p><h2>我的 3 條規則</h2><div class="grid"><input id="rule1" value="${esc(pb.rule1||'')}" placeholder="規則 1"><input id="rule2" value="${esc(pb.rule2||'')}" placeholder="規則 2"><input id="rule3" value="${esc(pb.rule3||'')}" placeholder="規則 3"></div></div><div class="card"><p class="eyebrow">預設選擇</p><h2>我的常用餐點</h2><textarea id="meals" rows="8" placeholder="早餐／午餐／晚餐預設選擇……">${esc(pb.meals||'')}</textarea></div><div class="card"><p class="eyebrow">活動</p><h2>我的最低活動量</h2><textarea id="movement" rows="6" placeholder="平常一週我可以重複的活動……">${esc(pb.movement||'')}</textarea></div><div class="card"><p class="eyebrow">重整流程</p><h2>我的每週回顧</h2><textarea id="review" rows="6" placeholder="我什麼時候回顧？會問自己什麼？">${esc(pb.review||'')}</textarea></div></section><button class="btn primary" style="margin-top:18px" onclick="savePlaybook()">儲存我的健康行動手冊</button></div>`}
+function savePlaybook(){state.playbook={rule1:rule1.value,rule2:rule2.value,rule3:rule3.value,meals:meals.value,movement:movement.value,review:review.value};save();toast('行動手冊已儲存')}
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+function landing(){return `<div class="landing"><header class="landing-nav"><a class="brand" href="/"><span class="logo">90</span><span><b>90 天健康重整</b><small>控糖與體重</small></span></a><a class="btn primary" href="/dashboard">開始</a></header><main><section class="landing-hero"><div><p class="eyebrow">90-DAY PRACTICAL HEALTH RESET</p><h1>小小的選擇。<br>持續的行動。<br>真正的改變。</h1><p class="landing-lead">一套為真實生活設計的 90 天飲食與生活習慣系統。特別為外食、忙碌工作與沒有時間複雜計算的人設計。</p><div class="price">US$19 <span>— 一次付款・一次購買</span></div><a class="btn primary bigbtn" href="/dashboard">開始我的 90 天重整 →</a><a class="btn outline bigbtn" href="#learn">查看 12 週內容 ↓</a><p style="font-size:12px;color:var(--muted);margin-top:18px">教育用途，不提供診斷、治療或個人化醫療建議。</p></div><div class="editorial-visual"><div class="img mainimg"><img src="assets/meal.jpg" alt="均衡餐盤"><div class="editorial-quote">Small choices.<br>Consistent actions.</div><div class="caption">均衡餐盤<small>吃得簡單・吃得平衡</small></div></div><div class="img"><img src="assets/movement.jpg" alt="簡單活動"><div class="caption">保持活動<small>Simple Movement</small></div></div><div class="img"><img src="assets/learning.jpg" alt="學習與成長"><div class="caption">學習與成長<small>Learn Clearly</small></div></div></div></section><section class="landing-section" id="learn"><p class="eyebrow">WHY THIS WORKS</p><h2>不是另一套嚴格飲食規則。</h2><p>真正困難的是早餐店、餐廳、便利商店、加班、聚餐、旅行與壓力下的每一次選擇。這套系統把健康習慣拆成你真的能做到的小步驟。</p><div class="editorial-grid"><div class="tile"><img src="assets/simple.jpg" alt="生活平衡"><span>生活保持平衡<small>LIVE BALANCED</small></span></div><div class="tile"><img src="assets/movement.jpg" alt="簡單活動"><span>簡單活動<small>STAY ACTIVE</small></span></div><div class="tile"><img src="assets/learning.jpg" alt="學習"><span>清楚學習<small>LEARN CLEARLY</small></span></div><div class="tile"><img src="assets/balance.jpg" alt="平衡"><span>穩定前進<small>KEEP BALANCED</small></span></div></div><div class="feature-grid"><div><b>12 週</b><span>引導式微課程</span></div><div><b>84 個</b><span>每日行動</span></div><div><b>5 份</b><span>實用 Bonus 工具</span></div></div></section><section class="landing-section dark"><p class="eyebrow">學習 → 選擇 → 行動 → 追蹤 → 回顧 → 調整</p><h2>不是追求完美，而是建立你的下一個好選擇。</h2><p>從 GI 與碳水、均衡餐盤、食品標籤，到外食、便利商店、份量、簡單活動與壓力管理，12 週一步一步建立可持續的方法。</p><a class="btn" style="background:#fff;color:var(--g)" href="/dashboard">開始 90 天重整 →</a></section><section class="landing-section"><p class="eyebrow">完整內容</p><h2>一套可以帶進真實生活的 90 天系統。</h2><p>12 週課程、每週回顧、五份加值指南、90 天習慣追蹤器，以及最後的個人健康行動手冊。</p><a class="btn primary" href="/dashboard">立即開始 →</a></section></main><footer class="landing-foot">教育用途，不提供診斷、治療、治癒、預防或個別化醫療建議。</footer></div>`}
 
-const lessons=[
-["今天的起點","先不要改變任何事情。花幾分鐘觀察今天的飲食、活動與生活節奏。"],
-["找出一個關鍵時刻","想想一天中最容易做出不理想選擇的時段，記錄它發生的原因。"],
-["設定你的最低標準","選擇一個非常容易做到的小行動，讓它成為今天的成功標準。"],
-["建立環境提示","把一個更好的選擇放到容易看到、容易取得的位置。"],
-["第一週回顧","回顧這週的觀察，選出下一週最值得保留的一個行動。"]
-];
+function render(){let path=location.pathname.replace(/\/+$/,'')||'/';let h=location.hash.replace(/^#/,'');if(h) path=h;let m=path.match(/^\/(?:week|weeks)\/(\d+)$/);if(m) path='/week/'+m[1];m=path.match(/^\/(?:lesson)\/(\d+)\/(\d+)$/);if(m) path='/lesson/'+m[1]+'/'+m[2];m=path.match(/^\/(?:action)\/(\d+)\/(\d+)$/);if(m) path='/action/'+m[1]+'/'+m[2];m=path.match(/^\/(?:checkin)\/(\d+)$/);if(m) path='/checkin/'+m[1];let v;if(path==='/')v=landing();else if(path==='/dashboard')v=dashboard();else if(/^\/week\/\d+$/.test(path))v=week(+path.split('/')[2]);else if(/^\/lesson\/\d+\/\d+$/.test(path)){let q=path.split('/');v=lesson(+q[2],+q[3]);}else if(/^\/action\/\d+\/\d+$/.test(path)){let q=path.split('/');v=action(+q[2],+q[3]);}else if(/^\/checkin\/\d+$/.test(path))v=checkin(+path.split('/')[2]);else if(path==='/progress')v=progress();else if(path==='/bonus')v=bonus();else if(path==='/completion')v=completion();else v=landing();document.getElementById('view').innerHTML=v;document.querySelectorAll('[data-nav]').forEach(a=>{let r=path.split('/')[1]||'dashboard';a.classList.toggle('active',a.dataset.nav===r)});}
 
-const actions=[
-"今天只做一個更好的飲食選擇，不要求整天完美。",
-"下一餐開始前，先停下來問自己：我真正需要的是什麼？",
-"今天安排一次 10 分鐘的輕鬆步行。",
-"選一份餐點時，先找蛋白質與蔬菜，再決定主要碳水來源。",
-"今天閱讀一個食品包裝的營養標示。",
-"外食時把含糖飲料換成無糖飲品或水。",
-"今天吃飯時刻意放慢速度，留意自己的飽足感。"
-];
-
-const titles=["重新開始與基準線","認識 GI 與碳水化合物","打造均衡餐盤","看懂食品標籤","早餐策略","外食策略","便利商店指南","份量覺察","簡單活動","壓力與情緒性進食","旅行、聚會與失誤","建立你的長期系統"];
-
-function getProgress(){
-  return JSON.parse(localStorage.getItem("reset90")||"{}");
-}
-function saveProgress(p){
-  localStorage.setItem("reset90",JSON.stringify(p));
-}
-function key(type,w,d){
-  return type+"-"+w+"-"+d;
-}
-function done(type,w,d){
-  return !!getProgress()[key(type,w,d)];
-}
-function toggle(type,w,d){
-  const p=getProgress();
-  const k=key(type,w,d);
-  p[k]=!p[k];
-  if(!p[k]) delete p[k];
-  saveProgress(p);
-  render();
-}
-function totalDone(){
-  return Object.keys(getProgress()).length;
-}
-function esc(s){
-  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-}
-function go(path){
-  history.pushState({},'',path);
-  render();
-  window.scrollTo(0,0);
-}
-
-function layout(content){
-  return `
-  <div class="app">
-    <aside class="side">
-      <div style="font:24px Georgia;color:var(--g);margin:8px 10px 24px">90 天重整</div>
-      <a href="/dashboard">⌂ 今天</a>
-      <a href="/weeks/1">▦ 12 週計畫</a>
-      <a href="/progress">◷ 我的進度</a>
-      <a href="/bonus">✦ Bonus 工具</a>
-      <div style="margin:28px 10px 8px;font-size:11px;color:var(--muted);letter-spacing:1px">核心循環</div>
-      <div style="padding:10px;color:var(--g);font-weight:600">學習 → 選擇 → 行動 → 追蹤 → 回顧</div>
-    </aside>
-    <main class="main">${content}</main>
-  </div>`;
-}
-
-function landing(){
-  return `
-  <section class="wrap">
-    <div class="hero">
-      <div>
-        <span class="eyebrow">90-DAY PRACTICAL HEALTH RESET</span>
-        <h1>吃得更聰明。<br>動得更簡單。<br>建立能持續的習慣。</h1>
-        <p>一套為真實生活設計的 90 天飲食與生活習慣系統。特別為外食、忙碌工作與沒有時間複雜計算的人設計。</p>
-        <div class="price">US$19 <span style="font:14px Inter;color:var(--muted)">一次付款・一次購買</span></div>
-        <div class="cta">
-          <a class="btn" href="/dashboard">開始我的 90 天重整 →</a>
-          <a class="btn ghost" href="/weeks/1">查看 12 週內容</a>
-        </div>
-        <p style="font-size:12px;color:var(--muted);margin-top:22px">教育用途，不提供診斷、治療或個人化醫療建議。</p>
-      </div>
-      <div class="photo">
-        <div class="plate"></div>
-      </div>
-    </div>
-
-    <section class="section">
-      <span class="kicker">WHY THIS WORKS</span>
-      <h2>不是另一套嚴格飲食規則。</h2>
-      <p class="muted" style="max-width:700px">你需要的不是更多「應該怎麼吃」的知識，而是一套能在早餐店、便當店、便利商店、聚餐與壓力大的工作日裡真正使用的方法。</p>
-      <div class="grid">
-        <div class="card"><b>01．更聰明的選擇</b><p class="muted">建立簡單判斷框架，不必每餐計算一大堆數字。</p></div>
-        <div class="card"><b>02．自在面對外食</b><p class="muted">學會在真實餐廳與便利商店環境中做選擇。</p></div>
-        <div class="card"><b>03．看懂食品標籤</b><p class="muted">抓住真正重要的資訊，減少被包裝與行銷誤導。</p></div>
-        <div class="card"><b>04．掌握份量</b><p class="muted">用視覺與手掌方法建立直覺，不追求完美。</p></div>
-        <div class="card"><b>05．簡單活動</b><p class="muted">用最低有效活動量，把運動變成日常的一部分。</p></div>
-        <div class="card"><b>06．處理壓力與失誤</b><p class="muted">學會調整，而不是一次失誤就放棄整個計畫。</p></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <span class="kicker">THE 90-DAY SYSTEM</span>
-      <h2>12 週，一步一步建立自己的方法。</h2>
-      <div class="steps">
-        <div class="step">學習</div><div class="step">選擇</div><div class="step">行動</div><div class="step">追蹤</div><div class="step">回顧</div><div class="step">調整</div>
-      </div>
-    </section>
-
-    <footer class="footer">90-Day Blood Sugar & Weight Reset · 教育性健康習慣產品<br>本產品不取代醫師或其他合格醫療專業人員提供的建議。</footer>
-  </section>`;
-}
-
-function dashboard(){
-  const p=totalDone(), pct=Math.min(100,Math.round(p/84*100));
-  return layout(`
-    <span class="kicker">TODAY</span>
-    <h1 class="h1">你的 90 天重整</h1>
-    <p class="muted">不用一次完成全部。今天只需要做下一個小行動。</p>
-
-    <div class="card" style="margin:28px 0">
-      <div style="display:flex;justify-content:space-between;gap:20px">
-        <b>整體進度</b><b>${pct}%</b>
-      </div>
-      <div class="bar" style="margin-top:12px"><i style="width:${pct}%"></i></div>
-      <p class="muted">${p} 個行動已完成。你的目標是持續，不是完美。</p>
-    </div>
-
-    <div class="lesson">
-      <div class="card">
-        <span class="kicker">CURRENT WEEK</span>
-        <h2 style="font:30px Georgia;color:var(--g)">第 1 週<br>重新開始與基準線</h2>
-        <p>先建立觀察與基準線，讓接下來的改變有一個清楚起點。</p>
-        <a class="btn" href="/weeks/1">進入第 1 週 →</a>
-      </div>
-      <div class="card">
-        <span class="kicker">TODAY'S ACTION</span>
-        <h2 style="font:30px Georgia;color:var(--g)">只做一個更好的選擇</h2>
-        <p>${actions[0]}</p>
-        <button class="btn" onclick="toggle('action',1,1)">${done('action',1,1)?"✓ 已完成":"完成今天行動"}</button>
-      </div>
-    </div>
-
-    <div class="section">
-      <span class="kicker">QUICK ACCESS</span>
-      <div class="grid">
-        <a class="card" href="/progress"><b>我的進度 →</b><p class="muted">查看完成狀態</p></a>
-        <a class="card" href="/bonus"><b>Bonus 工具 →</b><p class="muted">外食、標籤與便利商店</p></a>
-        <a class="card" href="/weeks/1"><b>12 週計畫 →</b><p class="muted">瀏覽完整課程</p></a>
-      </div>
-    </div>
-  `);
-}
-
-function weekPage(w){
-  const title=titles[w-1];
-  const outcome=weeks[w-1][1];
-  return layout(`
-    <span class="kicker">WEEK ${String(w).padStart(2,"0")} / 12</span>
-    <h1 class="h1">${esc(title)}</h1>
-    <p style="font-size:18px;max-width:720px">${esc(outcome)}</p>
-
-    <div class="card" style="margin:28px 0">
-      <b>本週節奏</b>
-      <p class="muted">5 天微課程 + 1 天彈性日 + 1 次週回顧。每天只需要完成一個小行動。</p>
-    </div>
-
-    <div class="lesson">
-      ${lessons.map((x,i)=>`
-        <a class="card" href="/lesson/${w}/${i+1}">
-          <span class="kicker">DAY ${i+1}</span>
-          <h2 style="font:25px Georgia;color:var(--g)">${esc(x[0])}</h2>
-          <p class="muted">${esc(x[1])}</p>
-          <span style="color:var(--g);font-weight:700">${done('lesson',w,i+1)?"✓ 已完成":"開始 →"}</span>
-        </a>`).join("")}
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <span class="kicker">FLEX DAY</span>
-      <h2 style="font:25px Georgia;color:var(--g)">彈性日</h2>
-      <p>補上尚未完成的內容，或單純休息。這不是失敗，而是系統的一部分。</p>
-      <button class="btn" onclick="toggle('flex',${w},1)">${done('flex',w,1)?"✓ 已完成":"完成彈性日"}</button>
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <span class="kicker">WEEKLY REVIEW</span>
-      <h2 style="font:25px Georgia;color:var(--g)">本週回顧</h2>
-      <p>花 5 分鐘回答：什麼最容易做到？什麼最困難？下一週我想保留哪一個行動？</p>
-      <button class="btn" onclick="toggle('review',${w},1)">${done('review',w,1)?"✓ 已完成":"完成本週回顧"}</button>
-    </div>
-
-    <div class="cta">
-      ${w>1?`<a class="btn ghost" href="/weeks/${w-1}">← 上一週</a>`:""}
-      ${w<12?`<a class="btn" href="/weeks/${w+1}">下一週 →</a>`:`<a class="btn" href="/completion">完成 90 天 →</a>`}
-    </div>
-  `);
-}
-
-function lessonPage(w,d){
-  const l=lessons[(d-1)%lessons.length];
-  const action=actions[(w+d-2)%actions.length];
-  return layout(`
-    <span class="kicker">WEEK ${w} · DAY ${d}</span>
-    <h1 class="h1">${esc(l[0])}</h1>
-    <p style="font-size:18px;max-width:720px">${esc(l[1])}</p>
-
-    <div class="lesson" style="margin-top:30px">
-      <div class="card">
-        <span class="kicker">MICRO LESSON</span>
-        <h2 style="font:30px Georgia;color:var(--g)">今天只學一件事</h2>
-        <p>${esc(l[1])}</p>
-        <p>健康習慣不需要一次全部改變。把注意力放在一個可以重複的小決定，通常比追求一次完美的一天更容易持續。</p>
-      </div>
-      <div class="card">
-        <span class="kicker">TODAY'S ACTION</span>
-        <h2 style="font:30px Georgia;color:var(--g)">你的下一個小行動</h2>
-        <p>${esc(action)}</p>
-        <button class="btn" onclick="toggle('lesson',${w},${d})">${done('lesson',w,d)?"✓ 已完成":"標記為完成"}</button>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <b>提醒自己</b>
-      <p class="muted">你不是在追求「完美飲食」。你是在練習讓更好的選擇變得更容易。</p>
-    </div>
-
-    <div class="cta">
-      <a class="btn ghost" href="/weeks/${w}">← 回到第 ${w} 週</a>
-      <a class="btn" href="/action/${w}/${d}">進入今日行動 →</a>
-    </div>
-  `);
-}
-
-function actionPage(w,d){
-  const action=actions[(w+d-2)%actions.length];
-  return layout(`
-    <span class="kicker">TODAY'S ACTION</span>
-    <h1 class="h1">把今天的知識變成行動。</h1>
-    <div class="card" style="margin:30px 0;padding:35px">
-      <span class="kicker">WEEK ${w} · DAY ${d}</span>
-      <h2 style="font:32px Georgia;color:var(--g)">${esc(action)}</h2>
-      <p>不需要做得完美，只要完成一次。</p>
-      <button class="btn" onclick="toggle('action',${w},${d})">${done('action',w,d)?"✓ 今天已完成":"我完成了 →"}</button>
-    </div>
-    <a class="btn ghost" href="/weeks/${w}">回到課程</a>
-  `);
-}
-
-function progressPage(){
-  const p=totalDone();
-  return layout(`
-    <span class="kicker">MY PROGRESS</span>
-    <h1 class="h1">我的 90 天進度</h1>
-    <p class="muted">記錄不是用來評分你，而是幫你看見自己已經做了多少。</p>
-    <div class="card" style="margin:28px 0">
-      <div style="font:55px Georgia;color:var(--g)">${p}</div>
-      <p>已完成的學習與行動</p>
-      <div class="bar"><i style="width:${Math.min(100,Math.round(p/84*100))}%"></i></div>
-    </div>
-    <div class="grid">
-      ${weeks.map((w,i)=>`
-        <a class="card weekcard" href="/weeks/${i+1}">
-          <span class="kicker">WEEK ${i+1}</span>
-          <b>${esc(w[0])}</b>
-          <p class="muted">${esc(w[1])}</p>
-        </a>`).join("")}
-    </div>
-  `);
-}
-
-function bonusPage(){
-  const bonuses=[
-    ["外食快速指南","早餐店、便當、餐廳、聚餐時快速使用的選擇框架。"],
-    ["購物與便利商店速查","沒有時間煮飯時，快速組合更平衡的一餐。"],
-    ["食品標籤解碼器","掌握份量、碳水、糖與成分表的閱讀順序。"],
-    ["90 天習慣追蹤器","把每天的小行動變成看得見的連續紀錄。"],
-    ["緊急飲食指南","忙碌、旅行或臨時找不到理想餐點時的備案。"]
-  ];
-  return layout(`
-    <span class="kicker">BONUS LIBRARY</span>
-    <h1 class="h1">你的快速工具箱。</h1>
-    <p class="muted">把最常需要的決策方法集中在這裡，需要時打開就能使用。</p>
-    <div class="grid" style="margin-top:30px">
-      ${bonuses.map((b,i)=>`
-        <div class="card" style="min-height:210px">
-          <span class="kicker">BONUS ${i+1}</span>
-          <h2 style="font:25px Georgia;color:var(--g)">${b[0]}</h2>
-          <p>${b[1]}</p>
-          <button class="btn ghost" onclick="alert('這份工具已加入你的 90 天工具箱。實際使用時，請依照課程中的框架操作。')">開啟工具</button>
-        </div>`).join("")}
-    </div>
-  `);
-}
-
-function checkinPage(w){
-  return layout(`
-    <span class="kicker">WEEK ${w} CHECK-IN</span>
-    <h1 class="h1">本週回顧時間</h1>
-    <p>不用打分數。只需要誠實地看看這週發生了什麼。</p>
-    <div class="card">
-      <div class="check"><input type="checkbox" ${done('review',w,1)?"checked":""} onchange="toggle('review',${w},1)"><div><b>我知道這週哪個行動最容易做到。</b></div></div>
-      <div class="check"><input type="checkbox"><div><b>我知道哪個時刻最容易讓我偏離計畫。</b></div></div>
-      <div class="check"><input type="checkbox"><div><b>我知道下一週要保留的一個小習慣。</b></div></div>
-    </div>
-    <div class="cta"><a class="btn" href="/weeks/${w}">回到第 ${w} 週</a></div>
-  `);
-}
-
-function completionPage(){
-  return layout(`
-    <section style="text-align:center;padding:55px 10px">
-      <span class="eyebrow">90 DAYS COMPLETE</span>
-      <h1 class="h1" style="font-size:58px">你完成了 90 天。</h1>
-      <p style="font-size:19px;max-width:650px;margin:20px auto">真正的成果不是完美執行，而是你現在擁有一套可以繼續使用的方法。</p>
-      <div class="card" style="max-width:700px;margin:35px auto;text-align:left">
-        <span class="kicker">YOUR PERSONAL HEALTH PLAYBOOK</span>
-        <h2 style="font:32px Georgia;color:var(--g)">建立你的長期系統</h2>
-        <div class="check"><input type="checkbox"><div>我的 3 個最有效習慣</div></div>
-        <div class="check"><input type="checkbox"><div>我的外食策略</div></div>
-        <div class="check"><input type="checkbox"><div>我的壓力日備案</div></div>
-        <div class="check"><input type="checkbox"><div>我的旅行與聚會策略</div></div>
-        <div class="check"><input type="checkbox"><div>我下一個 30 天要維持的重點</div></div>
-      </div>
-      <a class="btn" href="/dashboard">回到我的首頁 →</a>
-    </section>
-  `);
-}
-
-function render(){
-  const path=location.pathname.replace(/\/+$/,"")||"/";
-  let html;
-  if(path==="/") html=landing();
-  else if(path==="/dashboard") html=dashboard();
-  else if(path==="/progress") html=progressPage();
-  else if(path==="/bonus") html=bonusPage();
-  else if(path==="/completion") html=completionPage();
-  else {
-    let m;
-    if((m=path.match(/^\/weeks\/(\d+)$/))) html=weekPage(Math.max(1,Math.min(12,+m[1])));
-    else if((m=path.match(/^\/lesson\/(\d+)\/(\d+)$/))) html=lessonPage(+m[1],+m[2]);
-    else if((m=path.match(/^\/action\/(\d+)\/(\d+)$/))) html=actionPage(+m[1],+m[2]);
-    else if((m=path.match(/^\/checkin\/(\d+)$/))) html=checkinPage(+m[1]);
-    else html=landing();
-  }
-  document.getElementById("site").innerHTML=html;
-}
-
-document.addEventListener("click",e=>{
-  const a=e.target.closest("a");
-  if(!a)return;
-  const url=new URL(a.href);
-  if(url.origin===location.origin && !a.target){
-    e.preventDefault();
-    go(url.pathname);
-  }
-});
-
-window.addEventListener("popstate",render);
-render();
-</script>
-
-<footer class="footer" style="max-width:1120px;margin:auto;padding-left:24px;padding-right:24px">
-  <b>健康與安全聲明</b><br>
-  本網站提供一般性的健康教育與生活習慣資訊，並非醫療服務。內容不構成診斷、治療、治癒或預防任何疾病的醫療建議，也不取代醫師或其他合格醫療專業人員的專業判斷。若你正在接受疾病治療、使用藥物，或有特殊健康需求，請與你的醫療專業人員討論適合你的做法。
-</footer>
-</body>
-</html>  
-
+window.addEventListener('hashchange',render);document.getElementById('menu').onclick=()=>document.getElementById('side').classList.toggle('open');render();
+</script></body></html>
