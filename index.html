@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Week 3 verified build: topic-specific rich lessons take precedence over legacy fallbacks. -->
 <html lang="zh-TW">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -73,7 +74,7 @@ function week(n){const w=weeks[n-1],c=getCurr(n);setTop('第 '+n);let ld=w.lesso
 function lesson(w,l){
  const x=weeks[w-1],c=getCurr(w),d=c.lessons[l-1],done=!!state.lessons[key('l',w,l)],next=l<5?`#/lesson/${w}/${l+1}`:`#/action/${w}/1`;
  setTop(`第 ${w} · Learn ${l}`);
- const rich={
+ const week1Rich=(w===1?{
   1:{why:'如果你不知道自己的日常模式，就很容易把問題歸咎於意志力。第一週先不要求你吃得更少，而是先看見「什麼時候、在什麼情境下，我比較容易做出某種選擇」。看見模式，才有可能設計真正適合你的改變。',
      example:'早上趕著上班，只喝咖啡；中午 12:30 才吃飯，而且已經餓到很快吃完。這不是「自制力差」的證明，而是一條很有用的生活資料：早餐不足、等待太久、飢餓程度升高，可能一起影響午餐選擇。',
      judge:['先看情境：我當時有多餓、多久沒吃？','再看選項：我當時真正能選的是什麼？','最後看結果：吃完後的飽足感、速度與感受如何？'],
@@ -83,7 +84,7 @@ function lesson(w,l){
   3:{why:'80% 原則的價值，不是讓你降低標準，而是讓計畫能活在真實生活裡。工作、聚餐、旅行與臨時狀況一定會出現；真正重要的是偏離之後，你還能不能回到下一個有幫助的選擇。',example:'今天中午只能外食，你沒有找到理想餐點，但你選了一份有蛋白質、有蔬菜、份量較適合的餐。這不是「只有 80 分」，而是一個可以重複的成功。',judge:['這個選擇是否比自動反應更有意識？','我是否做到最重要的一件事，而不是所有細節？','明天在相同情境下，我還願意再做一次嗎？'],do:['找一個今天不可能完美的情境。','設定一個「最重要的一件事」。','完成它後，不再追加更多規則。','如果其他地方沒做到，不補償。','把成功定義成「我做到了關鍵一步」。'],cta:'今天就做：只設定一個「最重要的 80%」。',tip:'完成關鍵一步，比同時追求十個規則更容易形成習慣。'},
   4:{why:'習慣失敗，很多時候不是因為你不知道怎麼做，而是你沒有設計「最容易失守的那一刻」。找阻力，是把問題從「我要更有意志力」改成「我要替自己準備更好的選項」。',example:'下午加班、肚子餓、桌上剛好有零食。真正的阻力可能不是零食本身，而是「太餓＋太累＋沒有預先準備」。',judge:['阻力來自身體：太餓、疲倦？','來自環境：食物就在眼前、選擇太少？','來自情緒或社交：壓力、無聊、家人一起吃？'],do:['寫下最近一次卡住的真實情境。','拆出至少兩個阻力來源。','選一個阻力處理，而不是全部一起改。','設計一個提前準備。','下次遇到同一情境時，照這個方案練一次。'],cta:'今天就做：替你的「最容易失守時刻」設計一個備案。',tip:'備案不是限制自己，而是讓你在疲累時不用重新思考。'},
   5:{why:'第一個習慣的任務不是讓你變成另一個人，而是建立一個「明天也能做」的行動。小、清楚、可重複，比雄心壯志更有價值。',example:'「每天吃得健康」太模糊；「午餐看到餐盒時，先找蛋白質」就很清楚。前者需要大量決策，後者只需要一個觸發點。',judge:['行動夠小嗎？','什麼時候做很清楚嗎？','需要多少準備？忙碌時仍做得到嗎？'],do:['選一個你已經每天會做的事情當觸發點。','接上一個小行動。','把它寫成「當＿＿發生，我就＿＿」。','提前準備一個讓行動更容易的環境提示。','明天實際做一次並記下結果。'],cta:'今天就做：寫出你的第一句「當……我就……」。',tip:'真正好的習慣，不需要每天靠意志力重新決定。'}
- }[l]||lessonRichOverrides[`${w}-${l}`]||{why:c.why,example:d.example||d.concept,judge:['這符合我現在的情境嗎？','我能縮小成今天做得到的行動嗎？','這是我願意重複的做法嗎？'],do:[d.apply,'今天實際做一次。','記下結果。','找出一個可以更簡單的地方。','決定下一次怎麼重複。'],cta:'今天就做一次。',tip:'把觀念帶進下一個真實選擇。'};
+ }[l]:null);const rich=lessonRichOverrides[`${w}-${l}`]||week1Rich||{why:c.why,example:d.example||d.concept,judge:['這符合我現在的情境嗎？','我能縮小成今天做得到的行動嗎？','這是我願意重複的做法嗎？'],do:[d.apply,'今天實際做一次。','記下結果。','找出一個可以更簡單的地方。','決定下一次怎麼重複。'],cta:'今天就做一次。',tip:'把觀念帶進下一個真實選擇。'};
  return `<div class="page"><a class="muted" href="#/week/${w}">← 第 ${w}</a>
  <section class="card content section lesson-detail"><p class="eyebrow">LEARN ${l} OF 5 · WEEK ${w}</p><h1 class="lesson-title">${esc(d.title)}</h1><p class="lead lesson-lead">${esc(d.concept)}</p>
  <div class="lesson-map"><div><span>01</span><b>理解</b><small>先知道 WHY</small></div><div><span>02</span><b>看見</b><small>放進真實生活</small></div><div><span>03</span><b>判斷</b><small>知道怎麼選</small></div><div><span>04</span><b>行動</b><small>今天真的做</small></div></div>
@@ -91,7 +92,7 @@ function lesson(w,l){
   <section class="depth-card why"><p class="eyebrow">01 · WHY｜為什麼這件事值得學？</p><h2>${esc(d.title)}</h2><p>${esc(rich.why)}</p></section>
   <section class="depth-card"><p class="eyebrow">02 · 看見｜主題如何出現在你的生活</p><h2>真實情境：${esc(rich.example)}</h2><p>${esc(rich.observe||'先辨認這個主題在你的餐盤、購物與日常選擇中怎麼出現。')}</p></section>
   <section class="depth-card"><p class="eyebrow">03 · 判斷｜不要問「對不對」，先問「適不適合」</p><h2>三個判斷角度</h2><ul>${rich.judge.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></section>
-  ${rich.extra||''}<section class="depth-card action-now"><p class="eyebrow">04 · DO｜今天的實質動作</p><h2>${esc(rich.cta)}</h2><div class="checklist">${rich.do.map((v,i)=>`<label class="checkitem"><input type="checkbox" onchange="lessonPractice(${w},${l},${i},this.checked)"><span><b><span class="stepnum">${i+1}</span>${esc(v)}</b><small>${i===0?'先開始':i===1?'觀察':i===2?'實際做':i===3?'記錄':'決定下一步'}</small></span></label>`).join('')}</div><div class="action-note"><b>提醒</b><p>${esc(rich.tip)}</p></div></section>
+  ${rich.extra||''}<section class="depth-card action-now"><p class="eyebrow">04 · DO｜今天的實質動作</p><h2>${esc(rich.cta)}</h2><div class="checklist">${rich.do.map((v,i)=>`<label class="checkitem"><input type="checkbox" ${state.lessonPractice?.[key('p',w,l)]?.[i]?'checked':''} onchange="lessonPractice(${w},${l},${i},this.checked)"><span><b><span class="stepnum">${i+1}</span>${esc(v)}</b><small>${i===0?'先開始':i===1?'觀察':i===2?'實際做':i===3?'記錄':'決定下一步'}</small></span></label>`).join('')}</div><div class="action-note"><b>提醒</b><p>${esc(rich.tip)}</p></div></section>
  </div>
  <section class="selfcheck"><div><p class="eyebrow">30 秒自我檢查</p><h2>不是背答案，而是確認你能把它帶進生活。</h2></div><div class="selfcheck-grid"><button onclick="toggleSelf(this)"><b>我理解 WHY</b><span>知道為什麼這件事值得做</span></button><button onclick="toggleSelf(this)"><b>我找到情境</b><span>知道它在哪個時刻會出現</span></button><button onclick="toggleSelf(this)"><b>我知道下一步</b><span>能說出今天要做什麼</span></button></div></section>
  <div class="action-call"><div><strong>現在就把課程變成行動</strong><span>${esc(rich.cta)}</span></div><button type="button" class="btn primary" data-route="/action/${w}/${Math.min(5,l)}" onclick="event.preventDefault();event.stopPropagation();goRoute(this.dataset.route)">去做 Daily Action →</button></div>
