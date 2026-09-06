@@ -120,6 +120,18 @@
 .finish-banner strong{font-weight:800}
 @media(max-width:850px){.finish-banner>b{font-size:1.25rem}.finish-banner p{font-size:1.125rem}}
 
+
+/* v9: shared daily reflection controls and contextual action guidance. */
+.action-log{grid-template-columns:1fr;gap:.75rem}
+.log-chip{min-width:0;padding:1rem;text-align:left;white-space:normal;overflow-wrap:anywhere}
+.log-chip b{display:block;font-size:1.25rem;line-height:1.6;font-weight:800}
+.log-chip span{display:block;font-size:var(--reading-body);line-height:1.75;margin-top:.375rem}
+.daily-context-action{font-size:var(--reading-body);line-height:var(--reading-line);color:var(--ink)}
+.daily-context-action strong{font-weight:800}
+.context-tip>b{font-size:1.25rem;line-height:1.6;font-weight:800}
+.context-tip p{font-size:var(--reading-body);line-height:1.95;margin-top:.5rem}
+@media(max-width:1100px){.action-log{grid-template-columns:1fr}.log-chip{width:100%}}
+
 </style></head><body>
 <div class="app"><aside class="side" id="side"><a class="brand" href="https://90-day-blood-sugar-weight-reset.vercel.app/"><span class="logo">90</span><span><b>90 天健康重整</b><small>控糖與體重</small></span></a><div class="member"><span class="avatar">A</span><span><b>我的 90 天重整</b><span>第 <strong id="side第">1</strong>／90 天</span></span></div><nav class="nav"><a href="https://90-day-blood-sugar-weight-reset.vercel.app/" data-nav="dashboard">首頁</a><a href="#/progress" data-nav="progress">進度</a><a href="#/bonus" data-nav="bonus">加值資源庫</a><a href="#/completion" data-nav="completion">我的健康行動手冊</a></nav><div class="sidefoot"><div class="small"><span>90 天進度</span><b id="sidePct">0%</b></div><div class="bar"><i id="sideBar"></i></div></div></aside><main class="main"><header class="top"><div style="display:flex;align-items:center;gap:12px"><button class="menu" id="menu">☰</button><span class="crumb" id="crumb">你的重整計畫</span></div><div class="topright"><span class="streak" id="streak">連續 0 天</span><span class="avatar">A</span></div></header><div id="view"></div></main></div><div class="toast" id="toast"></div>
 <script>
@@ -207,7 +219,7 @@ function action(w,d){
  <button class="btn primary" style="margin-top:14px" onclick="saveAction(${w},${d})">${saved?'已儲存今天的進度 ✓':'儲存今天的進度'}</button>
  </div><aside class="grid">
  <div class="card"><p class="eyebrow">今天記下一個數字</p><h2>做完後，你的感受是？</h2><div class="action-log"><button class="log-chip" onclick="logActionFeeling(${w},${d},'輕鬆')"><b>輕鬆</b><span>比想像容易</span></button><button class="log-chip" onclick="logActionFeeling(${w},${d},'普通')"><b>普通</b><span>需要一點注意</span></button><button class="log-chip" onclick="logActionFeeling(${w},${d},'困難')"><b>困難</b><span>需要下次重新設計</span></button></div></div>
- <div class="card"><p class="eyebrow">KEEP IT REAL</p><h2>今天只解決一個時刻。</h2><p class="muted">${esc(notes)}</p><div class="context-tip"><b>如果今天沒做到</b><p>不要重來。寫下「為什麼沒做到」，它本身就是下一次設計的重要資料。</p></div></div>
+ <div class="card"><p class="eyebrow">KEEP IT REAL</p><h2>今天只解決一個時刻。</h2><p class="daily-context-action"><strong>${esc(notes)}</strong></p><div class="context-tip"><b>如果今天沒做到</b><p>不要重來。<br>寫下「為什麼沒做到」<br>它本身就是下一次設計的重要資料。</p></div></div>
  <div class="card"><p class="eyebrow">相關 Learn</p><a class="btn soft" href="#/lesson/${w}/${Math.min(5,d)}">回到相關課程 →</a></div>
  </aside></section></div>`}
 function focusFirstAction(){
